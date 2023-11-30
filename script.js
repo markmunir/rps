@@ -48,9 +48,11 @@ function game() {
     let computer = total - person;
 
     for (let i = 0; i < total; i++) {
-        person += playRound(getPlayerChoice(), getComputerChoice())
-        total += 1
+        const playerSelection = getPlayerChoice()
+        const computerSelection = getComputerChoice()
+        person += playRound(playerSelection, computerSelection)
     }
+    
 
     if (person > computer) {
         return "You win!"
@@ -61,4 +63,4 @@ function game() {
     }
 }
 
-console.log(game());
+console.log(game())
